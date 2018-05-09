@@ -71,11 +71,13 @@ const tx = await token.buy(3, {from: customer, value: TOKEN_PRICE * 3});
 
 const purchaseEvents = debugEvents.setTx(tx).getEvents('TokenPurchase');
 const balanceEvent = debugEvents.getEvent('BalanceUpdated');
+const allEvents = debugEvents.getEvents();
 
 assert.equal(purchaseEvents.length, 3);
 assert.equal(purchaseEvents[0].owner, customer);
 assert.isTrue(purchaseEvents[0].approved);
 assert.equal(balanceEvent.newBalance, 3);
+assert.equal(allEvents.length, 4);
 
 ```
 
