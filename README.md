@@ -7,7 +7,7 @@
 **Import and initalise object:**
 
 ```
-let DebugEvents = require('contract-events')(Flight);
+let DebugEvents = require('contract-events');
 let debugEvents = new DebugEvents(Flight);
 ```
 
