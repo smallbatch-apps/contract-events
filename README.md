@@ -7,8 +7,7 @@
 **Import and initalise object:**
 
 ```
-import DebugEvents from 'contract-events';
-
+let DebugEvents = require('contract-events')(Flight);
 let debugEvents = new DebugEvents(Flight);
 ```
 
@@ -83,41 +82,10 @@ assert.equal(allEvents.length, 4);
 
 ## Installation and setup
 
-This is unfortunately harder than it should be. Truffle’s default setup isn’t ideal for importing external libraries, especially ES6+ ones. The JavaScript required for the complex mapping is also non-standard.
-
-### Babel - .babelrc
-
-Make a .babelrc file in the root of your project, where your truffle files are, and ensure it has these settings:
+This has been greatly simplified. There should be only a single command and no setup.
 
 ```
-{
-  "presets": ["es2015", "stage-2", "stage-3"]
-}
-```
-
-### NPM - package.json
-
-Make sure you have the following installed in your package.json
-
-```
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "babel-register": "^6.26.0",
-```
-
-### Truffle Config - truffle.js 
-
-Truffle’s default build tooling doesn’t allow direct imports from the node_modules directory, but can be told to by explicitly whitelisting providers. Note that the “ignore” part of the rule tells it to ignore the import blocking - not to ignore the files.
-
-Put this at the **top** of your truffle.js file.
-
-```
-require('babel-register')({
-  ignore: /node_modules\/(?!zeppelin-solidity)/
-});
-require('babel-polyfill');
+npm i contract-events
 ```
 
 ## Why use this instead of OpenZeppelin’s decodeLogs.js test helper?
