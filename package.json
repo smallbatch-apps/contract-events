@@ -1,6 +1,6 @@
 {
   "name": "contract-events",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Debug and test against events in the Ethereum network",
   "main": "index.js",
   "scripts": {
