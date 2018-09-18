@@ -105,7 +105,7 @@ This seems ok - if verbose. Why do I have to pass in Flight.address when I'm alr
 
 The output isn’t any better.
 
-```bash
+```javascript
 [ { logIndex: 0,
     transactionIndex: 0,
     transactionHash: '0x1b935adf8b4f893f7db12abb55ae6c94c5f9ae44c427a42f7ab5bc9175d30691',
