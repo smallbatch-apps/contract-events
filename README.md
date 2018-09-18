@@ -18,7 +18,7 @@ const tx = await flight.book(1, {from: customer});
 
 debugEvents.setTx(tx);
 
-let bookingEvents = debugEvents.getEvent('SeatBooked’); // or 
+let bookingEvents = debugEvents.getEvent('SeatBooked'); // or 
 let bookingEvents = debugEvents.setTx(tx).getEvent('SeatBooked’);
 ``` 
 
@@ -47,7 +47,7 @@ let debugEvents = new DebugEvents(Flight);
 And it can be used to easily check transactions. Note that the transaction remains the same until replaced using setTx, so it can be queried for different events.
 
 ```javascript
-let bookingEvents = debugEvents.setTx(tx).getEvent('SeatBooked’);
+let bookingEvents = debugEvents.setTx(tx).getEvent('SeatBooked');
 ```
 
 Output:
@@ -57,7 +57,7 @@ Output:
   event: 'SeatBooked',
   flightId: 'JQ570',
   owner: '0x8950bdd216b3aaa3a293bda2e0b76dc735caf89d',
-  uuid: 'f151a5ab-f8b3-423b-bac0-e2e7d743194f’
+  uuid: 'f151a5ab-f8b3-423b-bac0-e2e7d743194f'
 }
 ```
 
