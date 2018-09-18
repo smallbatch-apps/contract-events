@@ -19,7 +19,7 @@ const tx = await flight.book(1, {from: customer});
 debugEvents.setTx(tx);
 
 let bookingEvents = debugEvents.getEvent('SeatBooked'); // or 
-let bookingEvents = debugEvents.setTx(tx).getEvent('SeatBooked’);
+let bookingEvents = debugEvents.setTx(tx).getEvent('SeatBooked');
 ``` 
 
 ## The Purpose
@@ -52,7 +52,7 @@ let bookingEvents = debugEvents.setTx(tx).getEvent('SeatBooked');
 
 Output:
 
-```json
+```javascript
 { 
   event: 'SeatBooked',
   flightId: 'JQ570',
